@@ -57,30 +57,23 @@
             <!-- insert your sidebar items here -->
             <h3>Latest News</h3>
             <!--Insert Latest News below-->
+		  
+            <div id="latest"></div>
 
-            <h4>Two Papers accepted in AAMAS 2025</h4>
-            <h5>January 2025</h5>
-            <p>The papers “On the Power of Temporal ... <a href="news.html">Read more</a> </p>
-        
-            <h4> Paper accepted in ICDCN 2025</h4>
-            <h5>January 2025</h5>
-            <p>The paper “Distributing Context-Aware
-              Shared Memory Data Structures: A Case Study on ... <a href="news.html">Read more</a></p>
-            
-            <h4> Paper accepted in ICDCIT 2025</h4>
-            <h5>January 2025</h5>
-            <p>The paper “Faster Leader Election and ... <a href="news.html">Read more</a></p>
-        
-            <h4>Two Papers accepted in DISC 2024</h4>
-            <h5>October 2024</h5>
-            <p>The papers “Agent-based Leader Election ... <a href="news.html">Read more</a></p>
-        
-        
-            <h4>Two Papers accepted in SSS 2024</h4>
-            <h5>October 2024</h5>
-            <p>The papers "TRAIL: Cross-Shard Validation for ... <a href="news.html">Read more</a></p>
-      
-			      </div>
+              <script>
+              async function includeHTML(id, file) {
+                const el = document.getElementById(id);
+                const res = await fetch(file);
+                if (!res.ok) {
+                  el.innerHTML = "Failed to load " + file;
+                  return;
+                }
+                el.innerHTML = await res.text();
+              }
+
+              includeHTML("latest", "latest_news.html");
+            </script>
+			    </div>
           <div class="sidebar_base"></div>
         </div>
         <!--<div class="sidebar">
